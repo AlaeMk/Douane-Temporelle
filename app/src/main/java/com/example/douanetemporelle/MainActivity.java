@@ -41,11 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
             // nasn3ou new Intent (hya elli t5alli activity tnjm elle communique m3a une autre activity) w naba3thou les donnees lel VerificationActivity
                 // houni sta3malna Intent explicite (5ater na3rfou l Activity destinataire)
+                // ne5dhou el méthode statique mel classe KeyExtra bech na3mlou les clés
                 Intent intent = new Intent(MainActivity.this, VerificationActivity.class);
-                intent.putExtra("NOM_EXTRA", nom);
-                intent.putExtra("NAISSANCE_EXTRA", naissance);
-                intent.putExtra("DESTINATION_EXTRA", destination);
-                intent.putExtra("MOTIF_EXTRA", motif);
+                intent.putExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE), nom);
+                intent.putExtra(KeyExtra.getNaissanceKey(KeyExtra.MATRICULE), naissance);
+                intent.putExtra(KeyExtra.getDestinationKey(KeyExtra.MATRICULE), destination);
+                intent.putExtra(KeyExtra.getMotifKey(KeyExtra.MATRICULE), motif);
             //nlanciw l Activity 2
                 startActivity(intent);
             }
