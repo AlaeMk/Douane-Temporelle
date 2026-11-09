@@ -5,15 +5,107 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/et_Nom_ab"
+        android:layout_width="209dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="204dp"
+        android:ems="10"
+        android:hint="ex: Alae"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_nom_ab"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_annee_naissance_ab"
+        android:layout_width="207dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="ex: 2005"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_naissance_ab"
+        app:layout_constraintTop_toBottomOf="@+id/et_Nom_ab" />
+
+    <EditText
+        android:id="@+id/et_annee_destination_ab"
+        android:layout_width="207dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="ex: 2050"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_destination_ab"
+        app:layout_constraintTop_toBottomOf="@+id/et_annee_naissance_ab" />
+
+    <Spinner
+        android:id="@+id/sp_motif_ab"
+        android:layout_width="189dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:entries="@array/motifs_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/tv_motif_ab"
+        app:layout_constraintTop_toBottomOf="@+id/et_annee_destination_ab" />
+
+    <Button
+        android:id="@+id/btn_Inspecter_ab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="60dp"
+        android:text="Inspecter le profil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sp_motif_ab" />
+
+    <TextView
+        android:id="@+id/tv_nom_ab"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Nom"
+        android:textSize="17sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_Nom_ab"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_naissance_ab"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Année de naissance"
+        android:textSize="17sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_annee_naissance_ab"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_destination_ab"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Destination"
+        android:textSize="17sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_annee_destination_ab"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_motif_ab"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="motif "
+        android:textSize="17sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/sp_motif_ab"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
