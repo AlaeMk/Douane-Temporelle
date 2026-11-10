@@ -7,13 +7,14 @@
     android:orientation="horizontal"
     tools:context=".VerificationActivity">
 
+
     <ImageView
         android:id="@+id/img_scanner_ab"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/avatars" />
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/tampon_de_douane" />
 
     <RelativeLayout
         android:id="@+id/rl_container_ab"
@@ -22,28 +23,31 @@
         android:layout_weight="0.7"
         android:padding="16dp">
 
+
+
         <TextView
             android:id="@+id/tv_resume_ab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Résumé du voyageur..."
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_approuver_ab"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_resume_ab"
-            android:layout_marginTop="20dp"
-            android:text="Approuver" />
+            android:layout_marginTop="67dp"
+            android:text="Approuver le saut temporel" />
 
         <Button
             android:id="@+id/btn_refuser_ab"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_approuver_ab"
-            android:layout_marginTop="10dp"
-            android:text="Refuser" />
+            android:layout_marginTop="62dp"
+            android:text="Refuser (Risque de paradoxe)" />
 
     </RelativeLayout>
 
