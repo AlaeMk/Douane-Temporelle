@@ -1,5 +1,10 @@
 package com.example.douanetemporelle;
-
+/*
+  Classe utilitaire : KeyExtra
+  Description : El classe hedhi fiha les méthodes statiques bech na3mlou bihom les clés mte3 l'Intent
+  - clé fiha les 4 chiffres mte3 el carte etudiant
+  - Hedha bech ntjanbou noko3dou nktbou fel clé kol marra manuellement (codées en dur)
+ */
 public class KeyExtra {
     public static final String MATRICULE = "1784";
     // key mta3 nom

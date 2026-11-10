@@ -1,5 +1,11 @@
 package com.example.douanetemporelle;
-
+/*
+  Activité 1 : MainActivity
+  Description : Activity hedhi hya el formulaire elli bch y3abih el voyageur
+  - Fiha les champs mte3 l esm, l annee de naissance, l annee de destination wel motif (liste deroulante )
+  - Ki nenzlou ala bouton "Inspecter", njibou les données mel formulaire
+  - Nasn3ou Intent explicite w naba3thou les données l VerificationActivity b les clés mte3 KeyExtra
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

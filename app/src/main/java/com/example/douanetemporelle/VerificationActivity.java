@@ -56,12 +56,16 @@ public class VerificationActivity extends AppCompatActivity {
         int diffTemps = destination - naissance;
 
         // affichage mte3 resume
-        String resumeTexte = "📋 Résumé du voyageur :" +
-                "\n----------------------------------" +
+        String resumeTexte = " Résumé du voyageur :" +
+                "\n________________________________" +
                 "\nNom : " + (nom != null ? nom : "Inconnu") +
+                "\n________________________________" +
                 "\nAnnée de Naissance : " + naissance +
+                "\n________________________________" +
                 "\nAnnée de Destination : " + destination +
+                "\n________________________________" +
                 "\nMotif : " + (motif != null ? motif : "-") +
+                "\n________________________________" +
                 "\n\n Âge temporel (Différence) : " + diffTemps + " ans";
         tvResume.setText(resumeTexte);
 

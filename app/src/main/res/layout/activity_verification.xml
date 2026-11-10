@@ -24,11 +24,11 @@
         android:padding="16dp">
 
 
-
         <TextView
             android:id="@+id/tv_resume_ab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
             android:text="Résumé du voyageur..."
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_resume_ab"
-            android:layout_marginTop="67dp"
+            android:layout_marginTop="147dp"
             android:text="Approuver le saut temporel" />
 
         <Button
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_approuver_ab"
-            android:layout_marginTop="62dp"
+            android:layout_marginTop="28dp"
             android:text="Refuser (Risque de paradoxe)" />
 
     </RelativeLayout>
