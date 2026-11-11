@@ -112,6 +112,22 @@
             app:strokeColor="#FF5252"
             app:strokeWidth="1.5dp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_annuler_ab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_refuser_ab"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="Annuler et modifier"
+            android:textColor="#0A1128"
+            android:textSize="13sp"
+            app:backgroundTint="#DBD2CF"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="@dimen/material_emphasis_high_type" />
+
     </RelativeLayout>
 
 </LinearLayout>

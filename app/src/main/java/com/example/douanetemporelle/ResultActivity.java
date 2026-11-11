@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +28,18 @@ public class ResultActivity extends AppCompatActivity {
         String nom = getIntent().getStringExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE));
         boolean verdict = getIntent().getBooleanExtra(KeyExtra.getVerdictKey(KeyExtra.MATRICULE), false);
 
+        // EXCEPTION : netaakdou elli nom mawjoud (mch null wala feragh)
+        if (nom == null || nom.trim().isEmpty()) {
+            Toast.makeText(this, "Erreur : Aucune donnée reçue !", Toast.LENGTH_LONG).show();
+
+            // Nraja3ou l'utilisateur lel formulaire (MainActivity) bch ya3mel saisie
+            Intent backIntent = new Intent(ResultActivity.this, MainActivity.class);
+            // Nfarr8ou l'mémoire bch ma yarj3ech lel Verdict ki yenzel 3al bouton "Retour"
+            backIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(backIntent);
+            finish();
+            return; // Nwa9fou l'5edma houni
+        }
         // narbtou les elements b les ID
         LinearLayout rootLayout = findViewById(R.id.root_result_ab);
         ImageView imgStatus = findViewById(R.id.img_status_ab);

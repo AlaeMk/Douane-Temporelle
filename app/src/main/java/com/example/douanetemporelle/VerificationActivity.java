@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -34,11 +36,18 @@ public class VerificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verification);
 
         // njibou les donnees men MainActivity b KeyExtra
-        String nom = getIntent().getStringExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE));
-        String naissanceStr = getIntent().getStringExtra(KeyExtra.getNaissanceKey(KeyExtra.MATRICULE));
-        String destinationStr = getIntent().getStringExtra(KeyExtra.getDestinationKey(KeyExtra.MATRICULE));
-        String motif = getIntent().getStringExtra(KeyExtra.getMotifKey(KeyExtra.MATRICULE));
+        Intent intent = getIntent();
+        String nom = intent.getStringExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE));
+        String naissanceStr = intent.getStringExtra(KeyExtra.getNaissanceKey(KeyExtra.MATRICULE));
+        String destinationStr = intent.getStringExtra(KeyExtra.getDestinationKey(KeyExtra.MATRICULE));
+        String motif = intent.getStringExtra(KeyExtra.getMotifKey(KeyExtra.MATRICULE));
 
+        // Exception : T'akked elli les données mawjoudin (mch null) bch hatta ken had yhb yhel activite 2 men android studio ma ttcrushech
+        if (nom == null || naissanceStr == null || destinationStr == null || motif == null) {
+            Toast.makeText(this, "Erreur : Données manquantes !", Toast.LENGTH_LONG).show();
+            finish(); // Nsakrou l'Activité 2 w narja3ou l'Activité 1
+            return;
+        }
         // narbtou les elements  b les ID mte3hom elli fel xml
         TextView tvResume = findViewById(R.id.tv_resume_ab);
         Button btnApprouver = findViewById(R.id.btn_approuver_ab);
@@ -51,8 +60,12 @@ public class VerificationActivity extends AppCompatActivity {
             naissance = Integer.parseInt(naissanceStr);
             destination = Integer.parseInt(destinationStr);
         } catch (Exception e) {
-            // au cas ou 3anna erreur de format
+            //nzidou un Toast w finish() bch ma n5alliwch l'app taffichi 0
+            Toast.makeText(this, "Erreur : Les années envoyées sont invalides !", Toast.LENGTH_LONG).show();
+            finish();
+            return;
         }
+
         int diffTemps = destination - naissance;
 
         // affichage mte3 resume
@@ -76,7 +89,7 @@ public class VerificationActivity extends AppCompatActivity {
         }
         // Navigation lel ResultActivity
         btnApprouver.setOnClickListener(v -> {
-            Intent intent = new Intent(VerificationActivity.this, ResultActivity.class);
+            Intent i = new Intent(VerificationActivity.this, ResultActivity.class);
             intent.putExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE), nom);
             // naba3thou verdict zeda lel ResultActivity
             intent.putExtra(KeyExtra.getVerdictKey(KeyExtra.MATRICULE), true);
@@ -84,7 +97,7 @@ public class VerificationActivity extends AppCompatActivity {
         });
         // action mta3 el boutton refuser w el passage lel ResultActivity
         btnRefuser.setOnClickListener(v -> {
-            Intent intent = new Intent(VerificationActivity.this, ResultActivity.class);
+            Intent i = new Intent(VerificationActivity.this, ResultActivity.class);
             intent.putExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE), nom);
             intent.putExtra(KeyExtra.getVerdictKey(KeyExtra.MATRICULE), false);
             startActivity(intent);

@@ -24,11 +24,13 @@ public class KeyExtra {
 
     // key mta3 matricule
     public static String getMotifKey(String matricule) {
+
         return matricule + "_MOTIF";
     }
     // key mta3 verdict
     public static String getVerdictKey(String matricule) {
-        return "VERDICT_" + matricule;
+
+        return   matricule + "_VERDICT";
     }
 }
 
