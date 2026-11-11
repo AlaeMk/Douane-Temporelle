@@ -59,8 +59,8 @@ Au-delà des exigences de base, plusieurs fonctionnalités ont été ajoutées p
 ---
 
 ##  Comment exécuter le projet ?
-1. Cloner le dépôt : `git clone [Lien de ton repo]`
+1. Cloner le dépôt : `git clone https://github.com/AlaeMk/Douane-Temporelle`
 2. Ouvrir le projet avec **Android Studio**.
-3. Lancer l'émulateur (API 29+ recommandé) et cliquer sur **Run**.
+3. Lancer l'émulateur et cliquer sur **Run**.
 
 ***
