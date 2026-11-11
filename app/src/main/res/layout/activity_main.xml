@@ -1,111 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:fillViewport="true"
+    android:background="#060C17"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/et_Nom_ab"
-        android:layout_width="209dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="204dp"
-        android:ems="10"
-        android:hint="ex: Alae"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_nom_ab"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/et_annee_naissance_ab"
-        android:layout_width="207dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="ex: 2005"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_naissance_ab"
-        app:layout_constraintTop_toBottomOf="@+id/et_Nom_ab" />
-
-    <EditText
-        android:id="@+id/et_annee_destination_ab"
-        android:layout_width="207dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="ex: 2050"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_destination_ab"
-        app:layout_constraintTop_toBottomOf="@+id/et_annee_naissance_ab" />
-
-    <Spinner
-        android:id="@+id/sp_motif_ab"
-        android:layout_width="189dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:entries="@array/motifs_array"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toEndOf="@+id/tv_motif_ab"
-        app:layout_constraintTop_toBottomOf="@+id/et_annee_destination_ab" />
-
-    <Button
-        android:id="@+id/btn_Inspecter_ab"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Inspecter le profil"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_motif_ab" />
+        android:background="#0B1B32"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <TextView
-        android:id="@+id/tv_nom_ab"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Nom"
-        android:textSize="17sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/et_Nom_ab"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_naissance_ab"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Année de naissance"
-        android:textSize="17sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/et_annee_naissance_ab"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_destination_ab"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Destination"
-        android:textSize="17sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/et_annee_destination_ab"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="287dp"
+            android:layout_height="101dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/iv_logo" />
 
-    <TextView
-        android:id="@+id/tv_motif_ab"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="motif "
-        android:textSize="17sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/sp_motif_ab"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="FORMULAIRE DE PROFIL VOYAGEUR"
+            android:textColor="#8892B0"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#111A2E"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#00E5FF"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#415366"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+
+
+                <ImageView
+                    android:id="@+id/iv_icon_nom"
+                    android:layout_width="61dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/icon1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nom"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_Nom_ab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="ex: Alae"
+                        android:inputType="textPersonName"
+                        android:padding="0dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#627293"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#111A2E"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#00E5FF"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#38495E"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <ImageView
+                    android:id="@+id/iv_icon_naissance"
+                    android:layout_width="41dp"
+                    android:layout_height="46dp"
+                    android:src="@drawable/naiss" /> <!-- ⚠️ Remplace par ton icône calendrier -->
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Année de naissance"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_annee_naissance_ab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="ex: 2005"
+                        android:inputType="number"
+                        android:padding="0dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#627293"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#111A2E"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#00E5FF"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#313F51"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+
+
+                <ImageView
+                    android:id="@+id/iv_icon_destination"
+                    android:layout_width="49dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/dest" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Destination"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_annee_destination_ab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="ex: 2050"
+                        android:inputType="number"
+                        android:padding="0dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#627293"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginBottom="30dp"
+            app:cardBackgroundColor="#111A2E"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#00E5FF"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#364052"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <ImageView
+                    android:id="@+id/iv_icon_motif"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/motif" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Motif"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_motif_ab"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="2dp"
+                        android:entries="@array/motifs_array" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Inspecter_ab"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Inspecter le profil"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#0A1128"
+            app:cornerRadius="30dp"
+            app:icon="@android:drawable/ic_menu_search"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconSize="24dp"
+            app:iconTint="#00E5FF"
+            app:strokeColor="#00E5FF"
+            app:strokeWidth="1.5dp" />
+
+        <ImageView
+            android:id="@+id/iv_stamp"
+            android:layout_width="411dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/tampon_de_douane" /> <!-- ⚠️ Remplace par l'image du timbre "Certifié par" -->
+
+    </LinearLayout>
+</ScrollView>

@@ -34,7 +34,7 @@ public class ResultActivity extends AppCompatActivity {
         TextView tvMessage = findViewById(R.id.tv_message_ab);
         Button btnNouveauVoyageur = findViewById(R.id.btn_nouveau_voyageur_ab);
 
-        // nhotoul interface ttbadal + message selon l verdict
+        // n7otou l interface ttbadal + message selon l verdict
         if (verdict) {
             // ken succees nhotouha verte
             rootLayout.setBackgroundColor(Color.parseColor("#209247"));

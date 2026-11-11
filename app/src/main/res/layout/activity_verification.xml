@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:background="@drawable/background_verification"
     tools:context=".VerificationActivity">
 
 
@@ -13,41 +14,103 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/tampon_de_douane" />
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/tampon" />
+
 
     <RelativeLayout
         android:id="@+id/rl_container_ab"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.7"
-        android:padding="16dp">
+        android:background="#1AFFFFFF"
+        android:padding="14dp">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_user_photo_ab"
+            android:layout_width="85dp"
+            android:layout_height="105dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#111A2E"
+            app:cardCornerRadius="6dp"
+            app:strokeColor="#0A1128"
+            app:strokeWidth="2dp">
+
+            <ImageView
+                android:id="@+id/img_user_photo_ab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profil" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/tv_passport_title_ab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="60dp"
+            android:text="PASSEPORT TEMPOREL"
+            android:textColor="#0A1128"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/tv_resume_ab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:text="Résumé du voyageur..."
-            android:textSize="16sp"
+            android:layout_below="@id/card_user_photo_ab"
+            android:layout_marginTop="16dp"
+            android:background="#15FFFFFF"
+            android:padding="10dp"
+            android:text="Nom : --\nNaissance : --\nDestination : --\nMotif : --\nÂge Temporel : --"
+            android:textColor="#0A1128"
+            android:textSize="13sp"
             android:textStyle="bold" />
 
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_approuver_ab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_resume_ab"
-            android:layout_marginTop="147dp"
-            android:text="Approuver le saut temporel" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="4dp"
+            android:text="Approuver"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:backgroundTint="#143675"
+            app:cornerRadius="8dp"
+            app:strokeColor="#92BCE9"
+            app:strokeWidth="1.5dp" />
 
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_refuser_ab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_approuver_ab"
-            android:layout_marginTop="28dp"
-            android:text="Refuser (Risque de paradoxe)" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="4dp"
+            android:text="Refuser (Paradoxe)"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:backgroundTint="#4D0E1C"
+            app:cornerRadius="8dp"
+            app:strokeColor="#FF5252"
+            app:strokeWidth="1.5dp" />
 
     </RelativeLayout>
 

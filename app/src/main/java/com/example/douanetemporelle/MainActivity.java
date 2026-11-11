@@ -21,6 +21,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    // ndeclari les variables
+    private EditText etNomAb;
+    private EditText etNaissanceAb;
+    private EditText etDestinationAb;
+    private Spinner spMotifAb;
+    private Button btnInspecter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,17 +40,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // njibou boutton Inspecter mel layout xml bel id mte3ou
-        Button btnInspecter = findViewById(R.id.btn_Inspecter_ab);
+        btnInspecter = findViewById(R.id.btn_Inspecter_ab);
+        // Narbtou les variables b les ID mte3hom m3a les éléments elli fel XML
+        etNomAb = findViewById(R.id.et_Nom_ab);
+        etNaissanceAb = findViewById(R.id.et_annee_naissance_ab);
+        etDestinationAb = findViewById(R.id.et_annee_destination_ab);
+        spMotifAb = findViewById(R.id.sp_motif_ab);
 
         btnInspecter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-            // on recupere les informations elli hathom l'utilisateur fel formulaire
-                String nom = ((EditText) findViewById(R.id.et_Nom_ab)).getText().toString();
-                String naissance = ((EditText) findViewById(R.id.et_annee_naissance_ab)).getText().toString();
-                String destination = ((EditText) findViewById(R.id.et_annee_destination_ab)).getText().toString();
-                String motif = ((Spinner) findViewById(R.id.sp_motif_ab)).getSelectedItem().toString();
+            // njibou les informations elli hathom l'utilisateur fel formulaire
+                String nom = etNomAb.getText().toString();
+                String naissance = etNaissanceAb.getText().toString();
+                String destination = etDestinationAb.getText().toString();
+                String motif = spMotifAb.getSelectedItem().toString();
+
 
             // nasn3ou new Intent (hya elli t5alli activity tnjm elle communique m3a une autre activity) w naba3thou les donnees lel VerificationActivity
                 // houni sta3malna Intent explicite (5ater na3rfou l Activity destinataire)
