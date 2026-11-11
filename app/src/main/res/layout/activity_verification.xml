@@ -126,7 +126,7 @@
             app:backgroundTint="#DBD2CF"
             app:cornerRadius="8dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="@dimen/material_emphasis_high_type" />
+            app:strokeWidth="2dp" />
 
     </RelativeLayout>
 

@@ -52,7 +52,7 @@ public class VerificationActivity extends AppCompatActivity {
         TextView tvResume = findViewById(R.id.tv_resume_ab);
         Button btnApprouver = findViewById(R.id.btn_approuver_ab);
         Button btnRefuser = findViewById(R.id.btn_refuser_ab);
-
+        Button btnAnnuler = findViewById(R.id.btn_annuler_ab);
         // ne7sbou différence bin l'année de destination wel année de naissance
         int naissance = 0;
         int destination = 0;
@@ -90,17 +90,19 @@ public class VerificationActivity extends AppCompatActivity {
         // Navigation lel ResultActivity
         btnApprouver.setOnClickListener(v -> {
             Intent i = new Intent(VerificationActivity.this, ResultActivity.class);
-            intent.putExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE), nom);
-            // naba3thou verdict zeda lel ResultActivity
-            intent.putExtra(KeyExtra.getVerdictKey(KeyExtra.MATRICULE), true);
-            startActivity(intent);
+            i.putExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE), nom);
+            i.putExtra(KeyExtra.getVerdictKey(KeyExtra.MATRICULE), true);
+            startActivity(i);
         });
         // action mta3 el boutton refuser w el passage lel ResultActivity
         btnRefuser.setOnClickListener(v -> {
             Intent i = new Intent(VerificationActivity.this, ResultActivity.class);
-            intent.putExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE), nom);
-            intent.putExtra(KeyExtra.getVerdictKey(KeyExtra.MATRICULE), false);
-            startActivity(intent);
+            i.putExtra(KeyExtra.getNomKey(KeyExtra.MATRICULE), nom);
+            i.putExtra(KeyExtra.getVerdictKey(KeyExtra.MATRICULE), false);
+            startActivity(i);
+        });
+        btnAnnuler.setOnClickListener(v -> {
+            finish(); // Yarja3 lel MainActivity (El données mte3ek bch yeb9aw maktoubin)
         });
     }
 }
