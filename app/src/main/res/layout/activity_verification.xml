@@ -125,7 +125,7 @@
             android:textSize="13sp"
             app:backgroundTint="#DBD2CF"
             app:cornerRadius="8dp"
-            app:strokeColor="@color/black"
+            app:strokeColor="#000000"
             app:strokeWidth="2dp" />
 
     </RelativeLayout>
