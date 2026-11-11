@@ -1,9 +1,22 @@
- ##  Mini Projet : Douane Temporelle 
+#  Mini Projet : Douane Temporelle
 
-*   **Nom & Prénom :** Alae Benelmekki
+*   **Réalisé par :** Alae Benelmekki
 *   **Groupe :** A06
 *   **Matricule / Clé utilisée :** `1784` (Les 4 derniers chiffres de la carte d'étudiant)
 *   **Initiales (pour les IDs) :** `ab`
+
+---
+## 📸 Aperçu de l'application 
+
+###  Le parcours principal de l'application
+| 1. Formulaire (MainActivity) | 2. Scanner de Paradoxe (VerificationActivity) | 3. Verdict : Refusé (ResultActivity) |
+| :---: | :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/ae1d48a0-fdec-46cb-8d21-e33d67080b34" width="350" /> | <img src="https://github.com/user-attachments/assets/157a124e-f964-441a-a3af-b3b09b251df1" width="350" /> | <img src="https://github.com/user-attachments/assets/14cf76f7-4be5-4310-a8d7-db1e31462671" width="350" /> |
+
+###  Succès et Gestion des Exceptions
+| 4. Verdict : Succès (ResultActivity) | 5. Exception : Alerte de Paradoxe (MainActivity) |
+| :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/15c7f54d-1613-46ff-b131-063d0d556580" width="350" /> | <img src="https://github.com/user-attachments/assets/3c5ece07-046e-4e46-b4cd-88761f5a0b45" width="350" /> |
 
 ---
 
@@ -16,17 +29,18 @@ L'application simule un poste de douane pour les voyageurs du temps. Elle est co
 
 ---
 
-##  Contraintes de l'énoncé respectées (Initiales `ab` & Clé `1784`)
+##  Contraintes de l'énoncé respectées 
 Toutes les contraintes techniques demandées dans l'énoncé ont été rigoureusement respectées :
 
 *   **Structure de l'Activité 2 :** Construite avec un `LinearLayout` horizontal racine. L'image à gauche a un poids de `0.3` et le `RelativeLayout` pour les textes a un poids de `0.7`.
 *   **Clés Dynamiques (Classe KeyExtra) :** Toutes les clés `putExtra` sont préfixées par `1784` (ex: `1784_NOM_VOYAGEUR`). Elles ne sont pas codées en dur, mais générées via des méthodes statiques (ex: `KeyExtra.getNomKey(...)`).
 *   **Règle du Paradoxe :** Dans l'Activité 2, si le motif est *"Modification du passe"* ET que l'âge temporel (Destination - Naissance) est un nombre premier, le bouton "Approuver" est automatiquement désactivé (disabled) dès le chargement.
 *   **IDs de l'interface :** Tous les IDs des éléments (TextView, EditText, Button) incluent les initiales du groupe (ex: `et_Nom_ab`, `btn_approuver_ab`).
+*   **Commentaires en Arabe :** Tout le code source (les fichiers Java et les layouts XML) est rigoureusement commenté en **arabe** (avec les chiffres), comme exigé dans les consignes du mini-projet.
 
 ---
 
-## ✨ Fonctionnalités Optionnelles (Ajoutées par l'étudiant)
+## ✨ Fonctionnalités Optionnelles 
 Au-delà des exigences de base, plusieurs fonctionnalités ont été ajoutées pour rendre l'application plus professionnelle, sécurisée et unique :
 
 *   **Design Premium & Immersif :** 
@@ -44,20 +58,7 @@ Au-delà des exigences de base, plusieurs fonctionnalités ont été ajoutées p
 
 ---
 
-## 📸 Captures d'écran
-
-
-| 1. Formulaire (MainActivity) | 2. Scanner (VerificationActivity) | 3. Verdict (ResultActivity) |
-| :---: | :---: | :---: |
-| <img width="372" height="762" alt="image" src="https://github.com/user-attachments/assets/ae1d48a0-fdec-46cb-8d21-e33d67080b34" />| <img width="367" height="687" alt="image" src="https://github.com/user-attachments/assets/157a124e-f964-441a-a3af-b3b09b251df1" />| <img width="367" height="711" alt="image" src="https://github.com/user-attachments/assets/14cf76f7-4be5-4310-a8d7-db1e31462671" />
-| <img width="357" height="697" alt="image" src="https://github.com/user-attachments/assets/15c7f54d-1613-46ff-b131-063d0d556580" />| <img width="352" height="632" alt="image" src="https://github.com/user-attachments/assets/3c5ece07-046e-4e46-b4cd-88761f5a0b45" />
-
-
-
-
----
-
-## 🚀 Comment exécuter le projet ?
+##  Comment exécuter le projet ?
 1. Cloner le dépôt : `git clone [Lien de ton repo]`
 2. Ouvrir le projet avec **Android Studio**.
 3. Lancer l'émulateur (API 29+ recommandé) et cliquer sur **Run**.
